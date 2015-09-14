@@ -1,0 +1,54 @@
+/* --------------------------------------------------------------------------------------
++
++ VARIABLES
++
+-------------------------------------------------------------------------------------- */
+
+//GLOBAL VARIABLES
+
+$experimental-support-for-svg:          true;
+
+//Basic colors
+$base-clr:                            	#fff;
+$header-bgr:                            #fff;
+$footer-bgr:							#18202a;
+$section-bgr:                           #f1f1f1;
+$base-font:                             "Roboto Slab", serif;
+$title-font:                            "Roboto Slab", serif;
+
+$base-font-size:                        16px;
+$button-font-size:                      22px;
+$base-line-height:                      1.5;
+
+$text-clr: 								#fff;
+$second-clr:							#fff;
+$title-clr:								#fff;
+$link-clr:								#fff;
+$link-hover:							#999999;
+
+$border:								#fff;
+
+$footer-clr:							#fff;
+
+$input-clr:								#fff;
+$input-bgr:								transparent;
+
+$btn-clr:								#fff;
+$btn-bgr:								#fff;
+$btn-hover:								#fff;
+
+
+//LAYOUT
+$space:                          		20px;
+$page-width:                            1170px;
+$radius:								3px;
+
+
+//SELECT TEXT
+$selected-text-bgr:						#000;
+$selected-text-clr:						#fff;
+
+$color-green:                           #2fa952;
+$color-blue:                            #0060aa;
+$color-purple:                          #333361;
+$color-red:                             #8a2036;

@@ -1,0 +1,64 @@
+/* --------------------------------------------------------------------------------------
++
++ FORMS
++
+-------------------------------------------------------------------------------------- */
+
+
+input[type="text"], textarea {
+	vertical-align: middle;
+	@include bs;
+	padding: 0 25px;
+	display: inline-block;
+	@include transition(all .4s ease);
+    font-family: $base-font;
+    -webkit-appearance: none; //remove inner box-shadow from iOS devices 
+    box-shadow: none;
+
+    &.small {
+		border: 1px solid #fff;
+		width: 317px;
+	    font-size: 15px;
+		background-color: $input-bgr;
+		color: $input-clr;
+	    @include lh(59px);
+		&:hover {
+			background:rgba(255,255,255,0.1);
+			
+		}
+
+    }
+    &.gray {
+    	background-color: $section-bgr;
+	    @include lh(48px);
+		font-size: 14px;
+		width: 100%;
+		border: none;
+		color: #5f5f5f;
+    	&:hover {
+    		background-color: #e2e2e2;
+    	}
+    }
+	&:hover, &:focus {
+	}
+}
+
+textarea {
+    background-color: $section-bgr;
+	font-size: 14px;
+	padding: 25px 25px;
+	line-height: $base-line-height;
+	resize: vertical;
+	width: 100%;
+	border: none;
+	color: #5f5f5f;
+	min-height: 210px;
+
+	&:hover {
+		background-color: #e2e2e2;
+	}
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+     color: transparent;
+}

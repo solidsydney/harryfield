@@ -1,0 +1,183 @@
+/* --------------------------------------------------------------------------------------
++
++ BASIC STYLES
++
+-------------------------------------------------------------------------------------- */
+
+@import "compass";
+@import "compass/reset";
+@import "variables";
+@import "mixins";
+
+//SETTING UP MAIN ELEMENTS
+html {
+
+}
+
+body {
+    color: $text-clr;
+    font-family: $base-font;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    -webkit-font-smoothing: antialiased;
+    min-width: $page-width;
+    width: 100%;
+    // overflow-x: hidden;
+    font-weight: 300;
+    * {
+        // color: red !important;
+        // border: 1px solid red !important;
+    }
+    #preloader {
+        position: fixed; 
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999999999;
+        background: url('../images/ajax-loader.gif') 50% 50% no-repeat #fff;
+        background-size: 50px 50px;
+    }  
+    &>textarea {
+        position: absolute;
+        margin-left: -2000px;
+    }     
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+    font-family: $title-font;
+    color: $title-clr;
+    font-weight: 300;
+    margin-bottom: $space;
+    
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 44px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 16px;
+}
+h6 {
+    font-size: 12px;
+}
+
+a {
+    outline: none;  /* removing outline in Mozilla */
+    @include transition(all .2s ease);
+    text-decoration: none;
+    color: $link-clr;
+    &:active {
+        background-color: transparent;
+    }
+    &:hover {
+        color: $link-hover;
+    }
+}
+
+p {
+    margin-bottom: $space;
+    clear: both;
+    font-family: $base-font;
+    font-weight: 300;
+}
+
+img {
+    vertical-align: top;
+}
+
+table {
+    width: 100%;
+}
+
+strong {
+    font-weight: bold;
+}
+
+small {
+    color: #5c697a;
+    font-size: 12.8px;
+}
+
+
+//CLEARING FLOAT (always extend .clearfix class)
+.clearfix {
+    @include pie-clearfix;
+}
+
+//SELECTED TEXT
+@include selected-text;
+
+//HIDE CLASS
+.hide {
+    display: none !important;
+}
+
+//SETTING FORM ELEMENTS
+button:hover,
+input[type="submit"]:hover,
+label {
+    cursor: pointer;
+}
+
+textarea {
+    margin: 0;             /* removing margin in Mozilla */
+    overflow: auto;        /* for IE and older browsers */
+}
+
+/* align checkboxes, radios, text inputs with their label */
+input[type="radio"] {
+    vertical-align: text-bottom;
+}
+
+input[type="checkbox"] {
+    vertical-align: bottom;
+    *vertical-align: baseline;
+}
+
+//removing webkit outline
+input:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+//removing odd button padding/margin in Mozilla
+button::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+
+#to_the_top {
+    @include box(72px);
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    @include background(image-url('top_icon.png', false, false) no-repeat 0 0);
+    display: block;
+    z-index: 1000;
+    @include nt;
+    &:hover {
+        background-position: 0 -72px;
+    }
+}
+
+.center {
+    text-align: center;
+}

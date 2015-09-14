@@ -1,0 +1,60 @@
+/* --------------------------------------------------------------------------------------
++
++ BUTTONS
++
+-------------------------------------------------------------------------------------- */
+
+.btn {
+    text-align: center;
+    color: $btn-clr;
+    border: none;
+    display: inline-block;
+    @include transition(all .3s ease);
+    font-family: $base-font;
+    font-size: $button-font-size;
+    background-color: transparent;
+    border: 1px solid #fff;
+    @include bs;
+
+    
+    &.small {  
+        padding:0 20px ;  
+        height: 59px;
+        line-height: 58px;
+                    
+        &:hover {
+            background: rgba(255,255,255,0.1);
+        }
+    }
+
+    &.medium {  
+        padding:0 70px;
+        border: 1px solid transparent;
+        background-color: #8a2036;
+        height: 49px;
+        line-height: 48px;
+        &:hover {
+            background-color: #6d1a2c;
+        }   
+    }
+
+    &.large {  
+        padding:0 55px;
+        height: 59px;
+        line-height: 58px;
+        color: #fff;
+        &:hover {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+    }
+
+    &.pb {
+        padding: 0 20px ; 
+        height: 49px;
+        line-height: 48px;
+        color: #fff;  
+        display: inline-block;
+        font-size: 20px;     
+    }
+}

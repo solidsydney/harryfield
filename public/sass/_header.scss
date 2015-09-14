@@ -1,0 +1,264 @@
+/* --------------------------------------------------------------------------------------
++
++ HEADER
++
+-------------------------------------------------------------------------------------- */
+
+.scroll_page {
+	@include box(92px);
+	@include background(image-url('arrows_header.png', false, false) no-repeat 0 0);
+	margin-left: 80px;
+	@include nt;
+	&:hover {
+		background-position: 0 -92px;
+	}
+}
+
+header  {
+	background-color: $header-bgr;
+	width: 100%; 
+	height: auto;
+	position: relative;
+	overflow: hidden;
+	&:before, &:after {
+		content: '';
+		z-index: 5;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: -80px;
+		left: 50%;
+		margin-left: 960px;
+		@include background(image-url('trans_header_bgr3.png', false, false) repeat 0 0);
+		@include translate(2000px, 0);
+		@include transition(all 1s ease 1s);
+	}
+	&:after {
+		left: auto;
+		margin-left: 0;
+		right: 50%;
+		margin-right: 960px;
+		@include translate(-2000px, 0);
+	}
+	&:before, &:after {
+		body.active & {
+			@include translate(0, 0);
+			
+		}
+	}
+	#wrapper {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+		&:before, &:after {
+			content: '';
+			z-index: 5;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			display: block;
+			@include background(image-url('trans_header_bgr1.png', false, false) no-repeat 50% 100%);
+			@include translate(-2000px, 0);
+			@include transition(all 1s ease-out .5s);
+		}
+		&:after {
+			@include translate(2000px, 0);
+			@include background(image-url('trans_header_bgr2.png', false, false) no-repeat 50% 100%);
+			@include transition(all 1s ease-out 1s);
+		}
+		&:before, &:after {
+			body.active & {
+				@include translate(0, 0);
+				
+			}
+		}
+	}
+	.text {
+		position: absolute;
+		left: 50%;
+		margin-left: -555px;
+		top: 70px;
+		z-index: 10;
+		h1 {
+			width: 400px;
+			font-size: 76px;
+			color: #fff;
+			line-height: 1.15;
+			margin-bottom: 50px;
+			@include translate(0, -500px);
+			body.active & {
+				@include transition(all 1s ease 2s);
+				@include translate(0, 0);
+				
+			}
+		}
+		a {
+			@extend .scroll_page;
+			@include fadeout;
+			@include scale(0);
+			body.active & {
+				@include scale(1);
+				@include fadein;
+				@include transition(all 1s ease 2.5s);
+				&.normal {
+					@include nt;
+				}
+			}
+		}
+
+	}
+	.container {
+		position: relative;
+	}
+	nav {
+		width: 100%;
+		height: 80px;
+		@include background(image-url('trans_header_bgr.png', false, false) no-repeat 80% 80px);
+		background-color: #18202a;
+		background-color: rgba(24,32,42,.9);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		overflow: hidden;
+		z-index: 10;
+		body.active & {
+			// @include transition(all 2s ease 2s);
+			background-position: 50% 100%;
+		}		
+		&.fixed {
+			@include t(.5s);
+			margin-bottom: -80px;
+			position: fixed;
+			top: 0;
+			bottom: 100%;
+			background-image: none;
+			background-color: white;	
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+			ul {
+				display: block;
+			}
+			a {
+				color: #5F5F5F;
+				&:hover {
+					color: lighten(#2FA952, 20%);
+				} 
+			}
+			.active {
+				a {
+					color: #2FA952;
+				}
+			}
+			.logo {
+				background-position: 0 -80px;
+			}
+		}
+		span {
+			display: none;
+		}   
+		.logo {
+			height: 80px;
+			width: 123px;
+			@include nt;
+			display: inline-block;
+			@include background(image-url('logo.png', false, false) no-repeat 0 0);
+		}
+		ul {
+			height: 80px;
+			line-height: 75px;
+			display: none;
+			@include t(1s);
+		}
+		li {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		li + li {
+			margin-left: 65px;
+			
+		}
+	}
+}
+
+
+/* subheader slider */
+#bannerscollection_zoominout_majestic {
+	@include box(100%);
+}
+.bannerscollection_zoominout {
+	position:relative;
+	z-index: 1;
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		@include box(100%);
+		@include background(image-url('slider-patern.png', false, false) repeat 50% 50%); 
+		z-index: 100;
+	}
+}
+.bannerscollection_zoominout img {
+	position:relative;
+	display: block;
+	max-width:inherit;
+	max-height:inherit;
+	-webkit-backface-visibility: hidden;
+	/*width:inherit;
+	height:inherit;	*/
+}
+.bannerscollection_zoominout_list {
+	margin:0;
+	padding:0;
+	list-style:none;
+	display:none;
+}
+
+.bannerscollection_zoominout .contentHolderVisibleWrapper {
+	position:absolute;
+	overflow:hidden;
+	margin-top:0px;
+	*margin-top:-20px;
+}
+.bannerscollection_zoominout .contentHolder {
+	position:absolute;
+}
+.bannerscollection_zoominout .contentHolderUnit {
+	/*position:relative;
+	float:left;*/
+	display:block;
+	overflow:hidden;
+}
+
+
+.mycanvas {
+	/*border:1px solid #ff0000;*/
+	position:absolute;
+	top:8px;
+	right:10px;
+	z-index:10;
+	display: none;
+}
+
+
+/***opportune SKIN***/
+.bannerscollection_zoominout.opportune .contentHolderVisibleWrapper {
+	position:absolute;
+	overflow:hidden;
+	margin-top:0px;
+}
+
+.bannerscollection_zoominout.opportune .bannerControls {
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:2;
+	width:100%;
+}
+
+
+
+
+
